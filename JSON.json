@@ -1,0 +1,22 @@
+import json
+
+#Exemple de dictionnaire à écrire dans un fichier JSON
+data = {
+    "clients": [
+        {"nom": "A", "age": 19, "salaire": 30000},
+        {"nom": "B", "age": 18, "salaire": 30000},
+        {"nom": "C", "age": 19, "salaire": 30000}
+    ]
+}
+
+# Écriture du dictionnaire dans un fichier JSON
+
+jsonf = open("fichier.json", "w")
+json.dump(data, jsonf, indent=4)
+
+# Optionally, reading the JSON file back to verify the content
+jsonf = open("fichier.json", "r")
+loaded_data = json.load(jsonf)
+print(loaded_data)
+
+
